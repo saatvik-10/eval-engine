@@ -1,4 +1,4 @@
-export interface ModelRespoonse {
+export interface ModelResponse {
   output: string;
   metadata: {
     model: string;
