@@ -7,6 +7,6 @@ export const simpleQADataset: EvaluationSample<string, string>[] = [
   },
   {
     input: 'WHO IS THE GREATEST FOOTBALL PLAYER OF ALL TIME ?',
-    expectedOutput: 'Lionel Messi',
+    expectedOutput: 'LIONEL MESSI',
   },
 ];
