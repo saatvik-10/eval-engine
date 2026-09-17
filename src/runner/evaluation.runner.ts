@@ -4,7 +4,7 @@ import type { Task } from '../tasks/base.task';
 import type { EvaluationResult } from '../types/evaluation-result';
 import type { EvaluationSample } from '../types/evaluation-sample';
 
-export class EvalationRunner<I, O> {
+export class EvaluationRunner<I, O> {
   constructor(
     private task: Task<I, O>,
     private provider: ModelProvider,
