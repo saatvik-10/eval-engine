@@ -1,15 +1,26 @@
-# eval-engine
+# Evaluation Engine V0
 
-To install dependencies:
+A lightweight, extensible evaluation engine for testing and measuring AI system outputs.
 
-```bash
-bun install
-```
+Built from scratch to understand the core architecture behind evaluation frameworks before integrating production-ready tools.
 
-To run:
+## Overview
 
-```bash
-bun run index.ts
-```
+The evaluation engine processes test samples, generates model predictions, evaluates them using metrics, and produces a report.
 
-This project was created using `bun init` in bun v1.4.0. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+```text
+Dataset
+   ↓
+Evaluation Runner
+   ↓
+Task (Prompt Builder + Output Parser)
+   ↓
+Model Provider
+   ↓
+Prediction
+   ↓
+Metrics
+   ↓
+Evaluation Result
+   ↓
+Console Report
