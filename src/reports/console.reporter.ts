@@ -2,7 +2,7 @@ import type { Reporter } from './base.reporter';
 import type { EvaluationResult } from '../types/evaluation-result';
 
 export class ConsoleReporter implements Reporter<string, string> {
-  report(results: EvaluationResult<string, string[]>[]): void {
+  report(results: EvaluationResult<string, string>[]): void {
     const totalSamples = results.length;
     const passedSamples = results.filter(
       (result) => result.metricResults[0]?.score === 1,
