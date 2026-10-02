@@ -4,6 +4,7 @@ import { EvaluationRunner } from './runner/evaluation.runner';
 import { SimpleQATask } from './tasks/simple-qa.task';
 import { ConsoleReporter } from './reports/console.reporter';
 import { JsonDatasetLoader } from './datasets/json.dataset-loader';
+import { SimpleDatasetValidator } from './datasets/dataset-validator';
 
 const task = new SimpleQATask();
 
@@ -15,7 +16,8 @@ const provider = new FakeModelProvider({
 const metric = [new ExactMatchMetric()];
 
 const runner = new EvaluationRunner(task, provider, metric);
-const loader = new JsonDatasetLoader<string, string>();
+const validator = new SimpleDatasetValidator<string, string>();
+const loader = new JsonDatasetLoader<string, string>(validator);
 
 const dataset = await loader.load('./src/datasets/simple-qa.json');
 const results = await runner.run(dataset);
