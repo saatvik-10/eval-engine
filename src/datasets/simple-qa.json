@@ -4,7 +4,7 @@
     "expectedOutput": "4"
   },
   {
-    "input": "WHO IS THE GREATEST FOOTBALL PLAYER OF ALL TIME ?",
-    "expectedOutput": "LIONEL MESSI"
+    "input": "WHAT IS THE CAPITAL OF FRANCE ?",
+    "expectedOutput": "PARIS"
   }
 ]
