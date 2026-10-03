@@ -1,10 +1,10 @@
-import { ExactMatchMetric } from './metrics/exact-match.metric';
 import { OpenRouterProvider } from './providers/openrouter.provider';
 import { EvaluationRunner } from './runner/evaluation.runner';
 import { SimpleQATask } from './tasks/simple-qa.task';
 import { ConsoleReporter } from './reports/console.reporter';
 import { JsonDatasetLoader } from './datasets/json.dataset-loader';
 import { SimpleDatasetValidator } from './datasets/dataset-validator';
+import { NormalizedExactMatchMetric } from './metrics/normalized-exact-match.metric';
 
 const task = new SimpleQATask();
 
@@ -12,7 +12,7 @@ const provider = new OpenRouterProvider(
   "openrouter/free"
 );
 
-const metric = [new ExactMatchMetric()];
+const metric = [new NormalizedExactMatchMetric()];
 
 const runner = new EvaluationRunner(task, provider, metric);
 const validator = new SimpleDatasetValidator<string, string>();
