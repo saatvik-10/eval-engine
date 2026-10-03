@@ -1,5 +1,5 @@
 import { ExactMatchMetric } from './metrics/exact-match.metric';
-import { FakeModelProvider } from './providers/fake.provider';
+import { OpenRouterProvider } from './providers/openrouter.provider';
 import { EvaluationRunner } from './runner/evaluation.runner';
 import { SimpleQATask } from './tasks/simple-qa.task';
 import { ConsoleReporter } from './reports/console.reporter';
@@ -8,10 +8,9 @@ import { SimpleDatasetValidator } from './datasets/dataset-validator';
 
 const task = new SimpleQATask();
 
-const provider = new FakeModelProvider({
-  'WHAT IS 2 + 2 ?': '4',
-  'WHO IS THE GREATEST FOOTBALL PLAYER OF ALL TIME ?': 'PENDU',
-});
+const provider = new OpenRouterProvider(
+  "openrouter/free"
+);
 
 const metric = [new ExactMatchMetric()];
 
