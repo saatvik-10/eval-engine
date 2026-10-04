@@ -5,7 +5,7 @@ export class ConsoleReporter implements Reporter<string, string> {
   report(results: EvaluationResult<string, string>[]): void {
     const totalSamples = results.length;
     const passedSamples = results.filter(
-      (result) => result.metricResults[0]?.score === 1,
+      (result) => result.metricResults[0]?.passed,
     ).length;
     const failedSamples = totalSamples - passedSamples;
     const accuracy = totalSamples > 0 ? passedSamples / totalSamples : 0;

@@ -18,11 +18,17 @@ export class SemanticSimilarityMetric implements Metric<string, string> {
       result.sample.expectedOutput,
     );
 
+    const THRESHOLD_SCORE = 0.7;
+
     const score = cosineSimilarity(predictedEmbedding, expectedEmbedding);
 
     return {
       name: 'semantic_similarity',
       score,
+      passed: score > THRESHOLD_SCORE,
+      details: {
+        THRESHOLD_SCORE,
+      },
     };
   }
 }

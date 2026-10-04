@@ -12,6 +12,7 @@ export class ExactMatchMetric implements Metric<string, string> {
     return {
       name: 'exact_match',
       score,
+      passed: score === 1,
     };
   }
 }

@@ -12,6 +12,7 @@ export class ContainsMetric implements Metric<string, string> {
     return {
       name: 'contains',
       score,
+      passed: score === 1,
     };
   }
 }

@@ -11,9 +11,12 @@ export class NormalizedExactMatchMetric implements Metric<string, string> {
     const predicted = normalize(result.prediction);
     const expected = normalize(result.sample.expectedOutput);
 
+    const score = predicted == expected ? 1 : 0;
+
     return {
       name: 'normalized_exact_match',
-      score: predicted === expected ? 1 : 0,
+      score,
+      passed: score === 1,
     };
   }
 }
