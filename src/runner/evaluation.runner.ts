@@ -28,7 +28,7 @@ export class EvaluationRunner<I, O> {
       };
 
       for (const metric of this.metrics) {
-        const metricResult = metric.evaluate(result);
+        const metricResult = await metric.evaluate(result);
         result.metricResults.push(metricResult);
       }
 
