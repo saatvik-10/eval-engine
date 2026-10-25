@@ -25,6 +25,7 @@ export class EvaluationRunner<I, O> {
         sample,
         prediction,
         metricResults: [],
+        metadata: (await response).metadata
       };
 
       for (const metric of this.metrics) {
